@@ -6,7 +6,7 @@
             <!-- Button trigger modal -->
 
 
-        <button  type="" class="  btn btn-sm  btn-rounded btn-info mb-1" data-toggle="modal" data-target="#exampleModal">
+        <button {{ $service_contents->count() == 1 ? 'disabled':'' }}  type="button" class="  btn btn-sm  btn-rounded btn-info mb-1" data-toggle="modal" data-target="#exampleModal">
             Add
         </button>
 
@@ -29,6 +29,7 @@
                             </thead>
                             <tbody>
                                 @if ($service_contents)
+
                                     @foreach ($service_contents as $data )
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
